@@ -6,3 +6,4 @@
 
 Успехов!
 1
+Cсылка проекта на GitHub pages: [https://andreykotlyarov.github.io/react-mesto-auth/](https://andreykotlyarov.github.io/react-mesto-auth/)
