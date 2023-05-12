@@ -4,6 +4,8 @@
   box-sizing: border-box;
   margin: 45px 200px 40px;
   align-self: stretch;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 1050px) {

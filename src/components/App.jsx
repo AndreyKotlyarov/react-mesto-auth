@@ -4,6 +4,9 @@ import Main from "./Main";
 import Footer from "./Footer";
 import PopupWithForm from "./PopupWithForm";
 import ImagePopup from "./ImagePopup";
+import Login from "./Login";
+import Register from "./Register";
+import InfoTooltip from "./InfoTooltip";
 import "../index.css";
 
 import api from "../utils/Api";
@@ -126,7 +129,10 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="container">
         <Header />
-        <Main
+        {/* <Login /> */}
+        <Register />
+        <InfoTooltip />
+        {/* <Main
           onEditProfile={handleEditProfileClick}
           onAddPlace={handleAddPlaceClick}
           onEditAvatar={handleEditAvatarClick}
@@ -134,7 +140,7 @@ function App() {
           onLikeClick={handleCardLike}
           onDeleteClick={handleDeleteClick}
           cards={cards}
-        />
+        /> */}
         <Footer />
 
         <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
