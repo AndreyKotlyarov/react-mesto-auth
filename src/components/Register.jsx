@@ -1,17 +1,39 @@
-export default function Register() {
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+export default function Register({ registerUser }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function handleEmailChange(e) {
+    setEmail(e.target.value);
+  }
+  function handlePasswordChange(e) {
+    setPassword(e.target.value);
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    registerUser(email, password);
+  }
   return (
     <section className="auth-page">
       <h1 className="auth-page__title">Регистрация</h1>
-      <form className="auth-page__form">
-        <input className="auth-page__input auth-page__input_type_email" placeholder="Email"></input>
-        <input className="auth-page__input auth-page__input_type_password" placeholder="Пароль"></input>
+      <form className="auth-page__form" onSubmit={handleSubmit}>
+        <input value={email} onChange={handleEmailChange} className="auth-page__input auth-page__input_type_email" placeholder="Email"></input>
+        <input
+          value={password}
+          onChange={handlePasswordChange}
+          className="auth-page__input auth-page__input_type_password"
+          placeholder="Пароль"
+          type="password"
+        ></input>
         <button type="submit" className="auth-page__button">
           Зарегистрироваться
         </button>
       </form>
-      <a className="auth-page__link" href="#">
+      <Link className="auth-page__link" to="/signin">
         Уже зарегистрированы? Войти
-      </a>
+      </Link>
     </section>
   );
 }
